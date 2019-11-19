@@ -20,12 +20,71 @@
     </header>
 
     <main class="content">
-      <aside class=side-filter-box">
+      <aside class="side-filter-box">
+        <!-- I think the way to filter for the recipes first given the meal might be this -->
+        <div class="filter-input-box">
+          <button id="filter-all-button" class="all-button">All</button>
+        </div>
+
+        <div class="filter-input-box">
+          <button id="filter-breakfast-button" class="breakfast-button">Breakfast</button>
+        </div>
+
+        <div class="filter-input-box">
+          <button id="filter-lunch-button" class="lunch-button">Lunch</button>
+        </div>
+
+        <div class="filter-input-box">
+          <button id="filter-dinner-button" class="dinner-button">Dinner</button>
+        </div>
+
+        <div class="filter-input-box">
+          <button id="filter-dessert-button" class="dessert-button">Dessert</button>
+        </div>
+
+        <div class="filter-input-box">
+          <button id="filter-snack-button" class="snack-button">Snack</button>
+        </div>
+
         <!-- Thought we could put that side box into here -->
           <h2>Recipes</h2>
 
-          <button id="filter-search-button" class="action-button">Search</button>
+          <div class="filter-input-box">
+            <label for="filter-search" class="filter-input-label">Search</label>
+            <div class="filter-element">
+              <input type="text" name="filter-search" id="filter-search" class="filter-input">
+            </div>
+          </div>
 
+          <div class="filter-input-box">
+            <label for="filter-cook-time" class="filter-input-label">Cook Time</label>
+            <div class="filter-element">
+              <input type="text" name ="filter-cook-time" id="filter-cook-time" class="filter-input">
+            </div>
+          </div>
+
+          <div class="filter-input-box">
+            <label for="filter-rating" class="filter-input-label">Rating</label>
+            <div class="filter-element">
+              <input type="text" name="filter-rating" id="filter-rating" class="filter-input">
+            </div>
+          </div>
+
+          <div class="filter-input-box">
+            <fieldset id="filter-ingredient" class="filter-fieldset">
+              <legend>Ingredients</legend>
+              <div>
+                <input type="checkbox" name="filter-ingredient" id="filter-water" value="water">
+                <label for="filter-ingredient-water">Water</label>
+              </div>
+              <div>
+                <input type="checkbox" name="filter-ingredient" id="filter-top-ramen" value="top-ramen">
+                <label for="filter-ingredient-ramen">Top Ramen</label>
+              </div>
+            </fieldset>
+          </div>
+
+        <button id="filter-search-button" class="action-button">Search</button>
 
       </aside>
 
