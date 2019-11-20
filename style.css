@@ -1,1 +1,31 @@
 /* This is the CSS file for the recipe website, it creates the look and feel of the site */
+
+/*Provisional Color Palette*/
+/*FBFBFC - "white"*/
+/*95A79E - grey*/
+/*D08F24 - orange*/
+/*C15236 - red*/
+/*2C3D3C - "black"*/
+
+body{
+
+  font-family: sans-serif;
+}
+
+.recipe{
+
+  /*border-radius: 2px; Do we want to follow modern design or do our own thing? Personally I miss right angles... -P*/
+  background-color: #95A79E;
+  padding: 10px;
+  color: #FBFBFC;
+}
+
+.recipe-info-container{
+
+  background-color: #D08F24;
+  border-color: #C15236;
+  border-style: solid;
+  border-width: 2px;
+  color: #C15236;
+  padding: 2px;
+}
