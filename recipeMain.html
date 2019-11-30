@@ -5,6 +5,8 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+
     <script src="recipe.js" charset="utf-8" defer></script>
   </head>
   <body>
@@ -12,15 +14,14 @@
     <header>
 
       <div class="header-image-container">
-        <img src= alt="Header Image">
+        <!-- <img src= alt="Header Image"> -->
       </div>
 
       <h1 class="site-title"><a href="#">Hungry College Recipes</a></h1>
 
     </header>
 
-    <main class="content">
-      <aside class="side-filter-box">
+      <aside class="top-filter-bar">
         <!-- I think the way to filter for the recipes first given the meal might be this -->
         <div class="filter-input-box">
           <button id="filter-all-button" class="all-button">All</button>
@@ -45,7 +46,10 @@
         <div class="filter-input-box">
           <button id="filter-snack-button" class="snack-button">Snack</button>
         </div>
+      </aside>
 
+  <main class="content">
+      <aside class="side-filter-box">
         <!-- Thought we could put that side box into here -->
           <h2>Recipes</h2>
 
@@ -70,7 +74,7 @@
             </div>
           </div>
 
-          <div class="filter-input-box">
+          <!-- <div class="filter-input-box">
             <fieldset id="filter-ingredient" class="filter-fieldset">
               <legend>Ingredients</legend>
               <div>
@@ -82,7 +86,7 @@
                 <label for="filter-ingredient-ramen">Top Ramen</label>
               </div>
             </fieldset>
-          </div>
+          </div> -->
 
         <button id="filter-search-button" class="action-button">Search</button>
 
@@ -90,13 +94,14 @@
 
       <section id="recipes">
         <!-- Here is an example of one recipe page -->
-        <div class="recipe" data-cooktime="120" data-rating="5">
+        <a class="recipe-title">A Very Nice Bowl of Top Ramen</a>
+        <div class="recipe" data-cooktime="120" data-rating="5" data-title="a very nice bowl of top ramen">
           <div class="recipe-contents">
             <div class="recipe-image-container">
               <img src="" alt="">
             </div>
             <div class="recipe-info-container">
-              <a class="recipe-title">A very nice bowl of Top Ramen</a>
+              <!-- <a class="recipe-title">A Very Nice Bowl of Top Ramen</a> -->
               <span class="recipe-cooktime">Cook Time: 120 minutes</span> <span class="recipe-rating">Rating: 5</span>
             </div>
           </div>

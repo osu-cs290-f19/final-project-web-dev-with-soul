@@ -8,24 +8,107 @@
 /*2C3D3C - "black"*/
 
 body{
-
-  font-family: sans-serif;
-}
-
-.recipe{
-
-  /*border-radius: 2px; Do we want to follow modern design or do our own thing? Personally I miss right angles... -P*/
-  background-color: #95A79E;
-  padding: 10px;
+  font-family: 'Joesfin Sans', sans-serif;
   color: #FBFBFC;
 }
 
-.recipe-info-container{
+header {
+  display: flex;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #FBFBFC;
+  background-color: #95A79E;
+  height: 110px;
+  padding-top: 1px;
+}
 
+ .site-title a {
+  color: #FBFBFC;
+  font-size: 85px;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+
+.top-filter-bar {
+  display: flex;
+  margin-top: 10px;
+}
+
+.top-filter-bar button {
+  font-family: 'Joesfin Sans', sans-serif;
+  display: flex;
+  font-size: 35px;
+  margin-right: 20px;
+  color: #FBFBFC;
+  padding: 0px 10px 0px 10px;
+  border: none;
+  background-color: #C15236;
+}
+
+
+.content {
+  display: flex;
+}
+
+.side-filter-box {
+  display: inline-block;
+  min-width: 300px;
+  max-width: 300px;
+  font-size: 20px;
+  margin: 10px 10px auto 0px;
+  padding: 0px 20px 20px 20px;
   background-color: #D08F24;
-  border-color: #C15236;
-  border-style: solid;
-  border-width: 2px;
-  color: #C15236;
-  padding: 2px;
+}
+
+.side-filter-box h2 {
+  margin-top: 10px;
+  margin-left: 70px;
+  font-size: 40px;
+}
+
+.filter-input-box {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.filter-element {
+  margin: 0 5px;
+  flex: 1 1 100%;
+}
+
+.filter-input {
+  font-size: 20px;
+  width: 100%;
+}
+
+.action-button {
+  font-size: 30px;
+  color: white;
+  background-color: #C15236;
+  border: 5px solid white;
+}
+
+#filter-search-button {
+  width: 100%;
+}
+
+#recipes {
+  display: inline-block;
+  margin: 10px 10px auto 10px;
+}
+
+.recipe-title{
+  font-family: 'Joesfin Sans', sans-serif;
+  font-size: 50px;
+  background-color: #D08F24;
+  color: #FBFBFC;
+  padding: 0px 10px 0px 10px;
+}
+
+.recipe {
+  font-size: 18px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #95A79E;
 }
