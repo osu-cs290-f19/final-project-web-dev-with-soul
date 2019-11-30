@@ -45,6 +45,11 @@ header {
   background-color: #C15236;
 }
 
+.top-filter-bar button:hover {
+  background-color: white;
+  color: #C15236;
+}
+
 
 .content {
   display: flex;
@@ -87,6 +92,11 @@ header {
   color: white;
   background-color: #C15236;
   border: 5px solid white;
+}
+
+.action-button:hover {
+  background-color: white;
+  color: #C15236;
 }
 
 #filter-search-button {
