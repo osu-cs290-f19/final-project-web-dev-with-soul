@@ -8,13 +8,13 @@
 /*2C3D3C - "black"*/
 
 body{
-  font-family: 'Joesfin Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   color: #FBFBFC;
 }
 
 header {
   display: flex;
-  font-family: 'Josefin Sans', sans-serif;
+  /*font-family: 'Josefin Sans', sans-serif;*/
   color: #FBFBFC;
   background-color: #95A79E;
   height: 110px;
@@ -36,7 +36,6 @@ header {
 }
 
 .top-filter-bar button {
-  font-family: 'Joesfin Sans', sans-serif;
   display: flex;
   font-size: 35px;
   margin-right: 20px;
@@ -110,7 +109,6 @@ header {
 }
 
 .recipe-title{
-  font-family: 'Joesfin Sans', sans-serif;
   font-size: 50px;
   background-color: #D08F24;
   color: #FBFBFC;
