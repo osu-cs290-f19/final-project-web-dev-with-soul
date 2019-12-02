@@ -32,6 +32,7 @@ header {
 .top-filter-bar {
   display: flex;
   margin-top: 10px;
+  justify-content: space-around;
 }
 
 .top-filter-bar button {
@@ -121,4 +122,19 @@ header {
   margin-top: 20px;
   padding: 10px;
   background-color: #95A79E;
+}
+
+.filter-name-unordered-list{
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+.filter-recipe-name{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.filter-recipe-name:hover{
+  /* font-weight: bold; */
+  text-decoration: underline;
 }
