@@ -1,0 +1,39 @@
+
+<!-- This isn't complete and we need to add data typing for the sorting-->
+
+
+<div class="recipe" data-cooktime="{{time}}" data-rating="{{rating}}" data-title="{{lowerCaseTitle}}">
+  <div class="recipeTitle">
+    <a class="recipe-title" data-name="{{title}}">{{title}}</a>
+  </div>
+  <div class="recipe-contents">
+    <div class="recipe-info-container">
+      <span class="recipe-cooktime">Cook Time: {{time}} minutes</span> <span class="recipe-rating">Rating: {{rating}}</span>
+    </div>
+    <div class="recipe-ingredients">
+      <ul style="list-style-type:square;">
+        <li>Cereal Box (1)</li> <!-- I dont know how to templitize this -->
+        <li>Milk (16oz)</li> <!-- I dont know how to templitize this -->
+      </ul>
+    </div>
+    <div class="recipe-instructions">
+      <ol>
+        <li>Get a bowl</li> <!-- I dont know how to templitize this -->
+        <li>Pour Cereal into bowl</li> <!-- I dont know how to templitize this -->
+        <li>Pour Milk into bowl</li> <!-- I dont know how to templitize this -->
+        <li>Enjoy!</li> <!-- I dont know how to templitize this -->
+      </ol>
+    </div>
+  </div>
+  <div class="images">
+    <div class="recipe-image-container">
+      <img src="{{imageLink}}" alt="{{title}}" height="200">
+    </div>
+    <div class="recipe-image-container">
+      <img src="{{imageLink}}" alt="{{title}}" height="200">
+    </div>
+    <div class="recipe-image-container">
+      <img src="{{imageLink}}" alt="{{title}}" height="200">
+    </div>
+  </div>
+</div>
