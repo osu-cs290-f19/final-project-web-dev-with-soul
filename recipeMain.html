@@ -91,21 +91,23 @@
 
         <div class= "filter-name-list">
           <ul class = "filter-name-unordered-list">
-            <li class = "filter-recipe-name"> A Very Nice Bowl of Top Ramen </li>
-            <li class = "filter-recipe-name"> Recipe Name </li>
-            <li class = "filter-recipe-name"> Recipe Name </li>
-            <li class = "filter-recipe-name"> Recipe Name </li>
-            <li class = "filter-recipe-name"> Recipe Name </li>
-            <li class = "filter-recipe-name"> Recipe Name </li>
+            <li class = "filter-recipe-name" data-title="A Very Nice Bowl of Top Ramen"> <button>A Very Nice Bowl of Top Ramen </button></li>
+            <li class = "filter-recipe-name" data-title="A Bowl of Cereal"> <button>A Bowl of Cereal</button> </li>
+            <li class = "filter-recipe-name" data-title=> <button>Recipe Name</button> </li>
+            <li class = "filter-recipe-name" data-title=> <button>Recipe Name</button> </li>
+            <li class = "filter-recipe-name" data-title=> <button>Recipe Name</button> </li>
+            <li class = "filter-recipe-name" data-title=> <button>Recipe Name</button> </li>
           </ul>
         </div>
 
       </aside>
 
       <section id="recipes">
+
+        <!-- <div class="recipe"> -->
         <!-- Here is an example of one recipe page -->
-        <a class="recipe-title">A Very Nice Bowl of Top Ramen</a>
         <div class="recipe" data-cooktime="120" data-rating="5" data-title="a very nice bowl of top ramen">
+          <a class="recipe-title" data-name="A Very Nice Bowl of Top Ramen">A Very Nice Bowl of Top Ramen</a>
           <div class="recipe-contents">
             <div class="recipe-image-container">
               <img src="" alt="">
@@ -131,6 +133,38 @@
             </ol>
           </div>
         </div>
+
+
+        <div class="recipe" data-cooktime="5" data-rating="3" data-title="a bowl of cereal">
+          <a class="recipe-title" data-name="A Bowl of Cereal">A Bowl of Cereal</a>
+          <div class="recipe-contents">
+            <div class="recipe-image-container">
+              <img src="" alt="">
+            </div>
+            <div class="recipe-info-container">
+              <!-- <a class="recipe-title">A Very Nice Bowl of Top Ramen</a> -->
+              <span class="recipe-cooktime">Cook Time: 5 minutes</span> <span class="recipe-rating">Rating: 3</span>
+            </div>
+          </div>
+          <div class="recipe-ingredients">
+            <ul style="list-style-type:square;">
+              <li>Cereal Box (1)</li>
+              <li>Milk (16oz)</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <ol>
+              <li>Get a bowl</li>
+              <li>Pour Cereal into bowl</li>
+              <li>Pour Milk into bowl</li>
+              <li>Enjoy!</li>
+            </ol>
+          </div>
+        </div>
+
+
+
+      <!-- </div> -->
 
       </section>
 

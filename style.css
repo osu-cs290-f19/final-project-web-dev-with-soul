@@ -137,3 +137,9 @@ header {
   /* font-weight: bold; */
   text-decoration: underline;
 }
+.recipe{
+  display: none;
+}
+.visable{
+  display: inline-block;
+}
