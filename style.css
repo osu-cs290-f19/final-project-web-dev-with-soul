@@ -10,6 +10,7 @@
 body{
   font-family: 'Josefin Sans', sans-serif;
   color: #FBFBFC;
+  background-color: rgb(242, 229, 213);
 }
 
 header {
@@ -32,7 +33,7 @@ header {
 .top-filter-bar {
   display: flex;
   margin-top: 10px;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .top-filter-bar button {
@@ -105,23 +106,50 @@ header {
 
 #recipes {
   display: inline-block;
+<<<<<<< HEAD
   margin: 20px 10px auto 10px;
+=======
+  margin: 10px 10px auto 10px;
+  /* border: 2px solid black; */
+>>>>>>> cebcfdf9245ac3648596af19aa8607577b5ef5e8
 }
 
 .recipe-title{
   font-size: 50px;
-  background-color: #D08F24;
   color: #FBFBFC;
+<<<<<<< HEAD
   padding: 10px;
   margin-top: 10px;
   width: 100%;
+=======
+  /* padding: 0px 10px 0px 10px; */
+}
+
+.recipeTitle{
+  text-align: center;
+  background-color: #D08F24;
+  padding-top: 10px;
+>>>>>>> cebcfdf9245ac3648596af19aa8607577b5ef5e8
 }
 
 .recipe {
   font-size: 18px;
-  margin-top: 20px;
-  padding: 10px;
+  /* margin-top: 20px; */
+  /* padding: 10px; */
+  display: none;
+}
+
+.recipe-contents{
   background-color: #95A79E;
+  padding: 10px;
+
+}
+
+.recipe-image-container{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid white;
 }
 
 .filter-name-unordered-list{
@@ -137,4 +165,18 @@ header {
 .filter-recipe-name:hover{
   /* font-weight: bold; */
   text-decoration: underline;
+}
+.visable{
+  display: inline-block;
+}
+
+.images{
+  display: flex;
+  justify-content: center;
+  background-color: #95A79E;
+  padding-bottom: 20px;
+}
+
+ol{
+  margin-bottom: 0px;
 }
