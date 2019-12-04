@@ -105,14 +105,16 @@ header {
 
 #recipes {
   display: inline-block;
-  margin: 10px 10px auto 10px;
+  margin: 20px 10px auto 10px;
 }
 
 .recipe-title{
   font-size: 50px;
   background-color: #D08F24;
   color: #FBFBFC;
-  padding: 0px 10px 0px 10px;
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
 }
 
 .recipe {
