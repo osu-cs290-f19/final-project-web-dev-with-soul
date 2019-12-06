@@ -98,7 +98,7 @@ function filterByMeal(idx) {
          }
        }
      }
-     if()
+     // if()
    });
  /* End of Search Button */
 
