@@ -1,7 +1,15 @@
 
 <!-- This isn't complete and we need to add data typing for the sorting-->
+<!-- Takes in the following:
+  time - string
+  rating - string
+  title - string
+  ingredients - array of objects with items and amounts
+  instructions - ordered array of strings
+  images - ordered array of image urls (May be broken, will have to see)
+-->
 
-<div class="recipe" data-cooktime="{{time}}" data-rating="{{rating}}" data-title="{{lowerCaseTitle}}">
+<div class="recipe" data-cooktime="{{time}}" data-rating="{{rating}}" data-title="{{title}}">
   <div class="recipeTitle">
     <a class="recipe-title" data-name="{{title}}">{{title}}</a>
   </div>
@@ -27,14 +35,8 @@
     </div>
   </div>
   <div class="images">
-    <div class="recipe-image-container">
-      <img src="{{imageLink}}" alt="{{title}}" height="200">
-    </div>
-    <div class="recipe-image-container">
-      <img src="{{imageLink}}" alt="{{title}}" height="200">
-    </div>
-    <div class="recipe-image-container">
-      <img src="{{imageLink}}" alt="{{title}}" height="200">
-    </div>
+    {{#each images}}
+      {{> image title=../title}}
+    {{/each}}
   </div>
 </div>
