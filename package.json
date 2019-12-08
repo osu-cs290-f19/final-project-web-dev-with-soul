@@ -1,0 +1,25 @@
+{
+  "name": "pmns-290-final",
+  "version": "1.0.0",
+  "description": "Recipe Website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs290-f19/final-project-web-dev-with-soul.git"
+  },
+  "author": "Preston Pickering",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-f19/final-project-web-dev-with-soul/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-f19/final-project-web-dev-with-soul#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.5.3"
+  }
+}

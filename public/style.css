@@ -1,0 +1,182 @@
+/* This is the CSS file for the recipe website, it creates the look and feel of the site */
+
+/*Provisional Color Palette*/
+/*FBFBFC - "white"*/
+/*95A79E - grey*/
+/*D08F24 - orange*/
+/*C15236 - red*/
+/*2C3D3C - "black"*/
+
+body{
+  font-family: 'Josefin Sans', sans-serif;
+  color: #FBFBFC;
+  background-color: rgb(242, 229, 213);
+}
+
+header {
+  display: flex;
+  /*font-family: 'Josefin Sans', sans-serif;*/
+  color: #FBFBFC;
+  background-color: #95A79E;
+  height: 110px;
+  padding-top: 1px;
+}
+
+ .site-title a {
+  color: #FBFBFC;
+  font-size: 85px;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+
+.top-filter-bar {
+  display: flex;
+  margin-top: 10px;
+  justify-content: flex-start;
+}
+
+.top-filter-bar button {
+  display: flex;
+  font-size: 35px;
+  margin-right: 20px;
+  color: #FBFBFC;
+  padding: 0px 10px 0px 10px;
+  border: none;
+  background-color: #C15236;
+}
+
+.top-filter-bar button:hover {
+  background-color: white;
+  color: #C15236;
+}
+
+
+.content {
+  display: flex;
+}
+
+.side-filter-box {
+  display: inline-block;
+  min-width: 300px;
+  max-width: 300px;
+  font-size: 20px;
+  margin: 10px 10px auto 0px;
+  padding: 0px 20px 20px 20px;
+  background-color: #D08F24;
+}
+
+.side-filter-box h2 {
+  margin-top: 10px;
+  margin-left: 70px;
+  font-size: 40px;
+}
+
+.filter-input-box {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.filter-element {
+  margin: 0 5px;
+  flex: 1 1 100%;
+}
+
+.filter-input {
+  font-size: 20px;
+  width: 100%;
+}
+
+.action-button {
+  font-size: 30px;
+  color: white;
+  background-color: #C15236;
+  border: 5px solid white;
+}
+
+.action-button:hover {
+  background-color: white;
+  color: #C15236;
+}
+
+#filter-search-button {
+  width: 100%;
+}
+
+#recipes {
+  display: inline-block;
+<<<<<<< HEAD
+  margin: 20px 10px auto 10px;
+=======
+  margin: 10px 10px auto 10px;
+  /* border: 2px solid black; */
+>>>>>>> cebcfdf9245ac3648596af19aa8607577b5ef5e8
+}
+
+.recipe-title{
+  font-size: 50px;
+  color: #FBFBFC;
+<<<<<<< HEAD
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+=======
+  /* padding: 0px 10px 0px 10px; */
+}
+
+.recipeTitle{
+  text-align: center;
+  background-color: #D08F24;
+  padding-top: 10px;
+>>>>>>> cebcfdf9245ac3648596af19aa8607577b5ef5e8
+}
+
+.recipe {
+  font-size: 18px;
+  /* margin-top: 20px; */
+  /* padding: 10px; */
+  display: none;
+}
+
+.recipe-contents{
+  background-color: #95A79E;
+  padding: 10px;
+
+}
+
+.recipe-image-container{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid white;
+}
+
+.filter-name-unordered-list{
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+.filter-recipe-name{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.filter-recipe-name:hover{
+  /* font-weight: bold; */
+  text-decoration: underline;
+}
+.visable{
+  display: inline-block;
+}
+
+.images{
+  display: flex;
+  justify-content: center;
+  background-color: #95A79E;
+  padding-bottom: 20px;
+}
+
+ol{
+  margin-bottom: 0px;
+}
