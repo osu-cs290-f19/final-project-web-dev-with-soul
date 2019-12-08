@@ -7,10 +7,12 @@ var fs = require('fs');
 var app = express();
 var port = process.env.PORT || 3000;
 
-var recipeData = [];
+var recipeData = require('./recipeData.json');
 
 app.engine('handlebars',exphbs());
-app.set('view-engine','handlebars');
+app.set('view engine','handlebars');
+
+app.use(express.static('public'));
 
 app.get('/',function(req,res){
 
