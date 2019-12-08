@@ -1,0 +1,28 @@
+[
+  {
+    "time":"120",
+    "rating":"5",
+    "title":"a very nice bowl of top ramen",
+    "type":"dinner",
+    "ingredients":[
+      {
+        "item":"Top Ramen",
+        "amount":"1 packet"
+      },
+      {
+        "item":"Water",
+        "amount":"3 cups"
+      }
+    ],
+    "instructions":[
+      "Heat up the water in a pot on the stove until boiling",
+      "Insert the noodles from the top ramen packet into the boiling water and wait 3 minutes",
+      "Open up the flavor packet and dump contents into pot with boiling noodes. Stir.",
+      "Once fully mixed, take pot off the heat and pour the ramen and broth into a serving bowl.",
+      "Enjoy!"
+    ],
+    "images":[
+      "https://odditymall.com/includes/content/upload/bowl-of-ramen-noodles-phone-and-tablet-dock-8141.jpg"  
+    ]
+  }
+]
