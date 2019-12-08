@@ -77,13 +77,55 @@
       });
 
 function filterByMeal(idx) {
-  if(recipeArray[idx].dataset.type != 'all' || recipeArray[idx].dataset.type != mealType){
-    recipeArray[idx].remove();
+  if(mealType != 'all'){
+    if(recipeArray[idx].dataset.type != mealType){
+      removeFromList(recipeArray[idx].dataset.title);
+    }
   }
+}
+
+function removeFromList(name){
+  for(var i = recipeNameArray.length-1; i >= 0; i--){
+     var filterListName = recipeNameArray[i].dataset.title;
+     filterListName = filterListName.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
+    if(filterListName == name){
+      recipeNameArray[i].remove();
+    }
+  }
+}
+
+function isInt(value){
+  for(var i = 0; i < value.length; i++){
+    if(!(value <= '9' && value >= '0')){
+      window.alert("Only numbers can be put in the Cook Time feild.");
+      filterCT.value = "";
+      break;
+    }
+    else{
+      goodInt = value;
+      return goodInt;
+    }
+  }
+  return 0;
+}
+
+function isRating(value){
+  for(var i = 0; i < value.length; i++){
+    if(!(value <= '5' && value >= '1')){
+      window.alert("Only ratings 1-5 can be put in the Rating feild.");
+      filterRating.value = "";
+      break;
+    }
+    else{
+      return value;
+    }
+  }
+  return 0;
 }
  /* Search Button */
    var search = document.getElementById('filter-search-button');
    search.addEventListener('click', function (event) {
+
      if(filterText.value != ""){
        for(var i = recipeArray.length -1; i >= 0; i--){
          var name = recipeArray[i].dataset.title;
@@ -94,11 +136,39 @@ function filterByMeal(idx) {
          userInp = userInp.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
 
          if(name.includes(userInp) == false){
-           recipeArray[i].remove();
+           removeFromList(name);
          }
        }
      }
-     // if()
+    if(filterCT.value != ""){
+        for(var i = recipeArray.length-1; i >=0; i--){
+          var cookTime = recipeArray[i].dataset.cooktime;
+
+          if(isInt(filterCT.value) == 0){
+          }
+          else{
+            if(+cookTime >= +filterCT.value){
+              removeFromList(recipeArray[i].dataset.title);
+            }
+          }
+            filterByMeal(i);
+        }
+      }
+      if(filterRate.value !=""){
+        for(var i = recipeArray.length-1; i >=0; i--){
+          var rateTime = recipeArray[i].dataset.rating;
+
+          if(isRating(filterRate.value) == 0){
+          }
+          else{
+            console.log("ratetim", rateTime, "filterr", filterRate.value);
+            if(+rateTime < +filterRate.value){
+              removeFromList(recipeArray[i].dataset.title);
+            }
+          }
+            filterByMeal(i);
+        }
+      }
    });
  /* End of Search Button */
 
