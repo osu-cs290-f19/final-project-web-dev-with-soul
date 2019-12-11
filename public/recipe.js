@@ -10,13 +10,13 @@
   function toggleVisability(event){
     console.log("WE GOT CLICKED");
     var choosenRecipe = event.currentTarget.dataset.title;
-    choosenRecipe = choosenRecipe.toLowerCase();
+    choosenRecipe = choosenRecipe;
     console.log(choosenRecipe);
 
     for (var i = 0; i < recipeArray.length; i++) {
       console.log(recipeArray[i].dataset.title);
 
-      if(recipeArray[i].dataset.title === choosenRecipe){
+      if(recipeArray[i].dataset.title == choosenRecipe){
         recipeArray[i].classList.add('visable');
         console.log(recipeArray[i]);
       }
@@ -122,12 +122,12 @@ function isRating(value){
  /* Search Button */
    var search = document.getElementById('filter-search-button');
    search.addEventListener('click', function (event) {
-	
+
      if(filterText.value == "" && filterCT.value == "" && filterRate.value == ""){
      	for(var i = recipeArray.length-1; i >= 0; i--){
 		filterByMeal(i);
 	}
-     } 
+     }
      if(filterText.value != ""){
        for(var i = recipeArray.length -1; i >= 0; i--){
          var name = recipeArray[i].dataset.title;
@@ -203,7 +203,7 @@ addButton.addEventListener('click', function (event){
 
  /* Remove Modal */
 function removeModal(event){
-  var modal = document.getElementById('add-recipe-modal');
+  var modal = document.getElementById('create-recipe-modal');
   modal.classList.add('hidden');
   var blurr = document.getElementById('modal-backdrop');
   blurr.classList.add('hidden');

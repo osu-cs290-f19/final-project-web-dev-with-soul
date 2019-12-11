@@ -1,0 +1,35 @@
+{
+  "time":"",
+  "rating":"",
+  "title":"",
+  "type":"",
+  "ingredients":[
+    {
+      "item":"",
+      "amount":""
+    },
+    {
+      "item":"",
+      "amount":""
+    }
+  ],
+  "instructions":[
+    {
+    "instruction":""
+    },
+    {
+    "instruction":""
+    },
+
+  ],
+  "images":[
+    {
+    "imageLink":"",
+    "title":""
+  },
+  {
+  "imageLink":"",
+  "title":""
+},
+  ]
+},
