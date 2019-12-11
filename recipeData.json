@@ -2,7 +2,7 @@
   {
     "time":"120",
     "rating":"5",
-    "title":"a very nice bowl of top ramen",
+    "title":"A Very Nice Bowl of Top Ramen",
     "type":"dinner",
     "ingredients":[
       {
@@ -23,6 +23,68 @@
     ],
     "images":[
       "https://odditymall.com/includes/content/upload/bowl-of-ramen-noodles-phone-and-tablet-dock-8141.jpg"  
+    ]
+  },
+  {
+    "time":"5",
+    "rating":"3",
+    "title":"A Bowl of Cereal",
+    "type":"breakfast",
+    "ingredients":[
+      {
+        "item":"Cereal",
+        "amount":"1 box"
+      },
+      {
+        "item":"Milk",
+        "amount":"16oz"
+      }
+    ],
+    "instructions":[
+      "Get a bowl",
+      "Pour cereal into bowl",
+      "Pour milk into bowl",
+      "Enjoy! You lazy son of a"
+    ],
+    "images":[
+      "https://www.humphreysfarm.com/productcart/pc/catalog/2862-lg.jpg"  
+    ]
+  },
+  {
+    "time":"10",
+    "rating":"3",
+    "title":"A Cool Sandwich",
+    "type":"lunch",
+    "ingredients":[
+      {
+        "item":"Sliced Bread",
+        "amount":"2 slices"
+      },
+      {
+        "item":"Chedder Cheese",
+        "amount":"3 slices"
+      },
+      {
+ 	"item": "Bacon",
+	"amount":"4 slices"	
+      },
+      {
+ 	"item": "Lettuce",
+	"amount":"4 leaves"	
+      },
+      {
+ 	"item": "Tomato",
+	"amount":"2 slices"	
+      }
+    ],
+    "instructions":[
+      "Prep ingredients",
+      "Toast the bread",
+      "Assemble sandwich atop bread slice",
+      "Enjoy!"
+    ],
+    "images":[
+     "https://www.landolakes.com/RecipeManagementSystem/media/Recipe-Media-Files/Recipes/Retail/x17/2018_Avocado-and-Bacon-Grilled-Cheese_2644_600x600.jpg?ext=.jpg"
     ]
   }
 ]
