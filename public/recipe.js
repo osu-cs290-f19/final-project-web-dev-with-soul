@@ -191,13 +191,13 @@ addButton.addEventListener('click', function (event){
 /* Closes Modal */
  var closeX = document.getElementById('modal-close');
  closeX.addEventListener('click', function (event){
-   // removeInput();
+   removeInput();
    removeModal();
  });
 
  var closeC = document.getElementById('modal-cancel');
  closeC.addEventListener('click', function (event){
-   // removeInput()
+   removeInput()
    removeModal();
  });
 
@@ -210,4 +210,52 @@ function removeModal(event){
 }
 /* Removes user input from add */
 function removeInput(event){
+    var recipeInputElements = [
+      document.getElementById('recipe-time-input'),
+      document.getElementById('recipe-rating-input'),
+      document.getElementById('recipe-title-input'),
+// For the ingredients and instructions
+      // document.getElementById('')
+      // document.getElementById('')
+      document.getElementbyId('recipe-photo-input');
+      document.getElementbyId('recipe-photo-title-input');
+    ];
+
+    postTextInputElements.forEach(function (inputElem) {
+      inputElem.value = '';
+    });
+
+    var checkedType = document.querySelector('#recipe-type-fieldset input[checked]');
+    checkedType.checked = true;
+
+}
+
+// Checks user input into modal before accepting
+function closeAccept() {
+  var time = document.getElementById('recipe-time-input').value.trim();
+  var rating = document.getElementById('recipe-rating-input').value.trim();
+  var title = document.getElementById('recipe-title-input').value.trim();
+  var type = document.querySelector('#reipe-type-fieldset input:checked').value;
+  // var ingredients = document.getElementById()
+  // var instructions = document.getElementById()
+  var imageLink = document.getElementById('recipe-photo-input');
+//need to include the ingredients and instructions array
+  if (!time || !rating || !title || !type || !imageLink) {
+    alert("You must fill in all of the fields!");
+  } else {
+
+    allPosts.push({
+      time: time,
+      rating: rating,
+      title: title,
+      type: type,
+      ingredients: ingredients,
+      instructions: instructions,
+      imageLink: imageLink,
+    });
+
+    removeInput();
+    removeModal();
+  }
+
 }
