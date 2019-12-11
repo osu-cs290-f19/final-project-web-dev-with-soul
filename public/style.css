@@ -46,11 +46,17 @@ header {
   background-color: #C15236;
 }
 
-.top-filter-bar button:hover {
+.top-filter-bar button:focus {
   background-color: white;
   color: #C15236;
 }
 
+.filter-recipe-name button {
+  border: 2px solid white;
+  font-size: 20px;
+  color: #FBFBFC;
+  background-color: #D08F24;
+}
 
 .content {
   display: flex;
