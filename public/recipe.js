@@ -173,3 +173,38 @@ function isRating(value){
  /* End of Search Button */
 
  /* End Filter Box Functionality */
+
+ // Start of modal
+
+ /* Open Modal */
+var addButton = document.getElementById('add-recipe-button');
+addButton.addEventListener('click', function (event){
+  var modal = document.getElementById('create-recipe-modal');
+  modal.classList.remove('hidden');
+  var blurr = document.getElementById('modal-backdrop');
+  blurr.classList.remove('hidden');
+});
+
+/* Closes Modal */
+ var closeX = document.getElementById('modal-close');
+ closeX.addEventListener('click', function (event){
+   // removeInput();
+   removeModal();
+ });
+
+ var closeC = document.getElementById('modal-cancel');
+ closeC.addEventListener('click', function (event){
+   // removeInput()
+   removeModal();
+ });
+
+ /* Remove Modal */
+function removeModal(event){
+  var modal = document.getElementById('add-recipe-modal');
+  modal.classList.add('hidden');
+  var blurr = document.getElementById('modal-backdrop');
+  blurr.classList.add('hidden');
+}
+/* Removes user input from add */
+function removeInput(event){
+}

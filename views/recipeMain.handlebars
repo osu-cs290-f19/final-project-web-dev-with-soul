@@ -87,3 +87,73 @@
 </section>
 
 </main>
+
+<!-- Don't know a different button but thought that the plus was okay (Megan) -->
+<button type="button" id="add-recipe-button"><i class="fas fa-plus"></i></button>
+
+<div id="modal-backdrop" class="hidden"></div>
+<div id="create-recipe-modal" class="hidden">
+  <div class="modal-dialog">
+
+    <div class="modal-header">
+      <h3>Post a Recipe</h3>
+      <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="recipe-page-element">
+        <label for="recipe-time-input">Cook Time</label>
+        <input type="text" id="recipe-time-input"></input>
+      </div>
+
+      <div class="recipe-page-element">
+        <label for="recipe-rating-input">Rating</label>
+        <input type="text" id="recipe-rating-input"></input>
+      </div>
+
+      <div class="recipe-page-element">
+        <label for="recipe-title-input">Recipe Name</label>
+        <input type="text" id="recipe-title-input"></input>
+      </div>
+
+      <div class="recipe-page-element">
+        <fieldset id="recipe-type-fieldset" class="recipe-fieldset">
+          <legend>Type</legend>
+          <div>
+            <input type="radio" name="recipe-type" id="recipe-type-breakfast" value="breakfast" checked>
+            <label for="recipe-type-breakfast">Breakfast</label>
+          </div>
+          <div>
+            <input type="radio" name="recipe-type" id="recipe-type-lunch" value="lunch">
+            <label for="recipe-type-lunch">Lunch</label>
+          </div>
+          <div>
+            <input type="radio" name="recipe-type" id="recipe-type-dinner" value="dinner">
+            <label for="recipe-type-dinner">Dinner</label>
+          </div>
+          <div>
+            <input type="radio" name="recipe-type" id="recipe-type-dessert" value="dessert">
+            <label for="recipe-type-dessert">Dessert</label>
+          </div>
+          <div>
+            <input type="radio" name="recipe-type" id="recipe-type-snack" value="snack">
+            <label for="recipe-type-snack">Snack</label>
+          </div>
+        </fieldset>
+      </div>
+<!-- Dont know how to do ingredients or instructions -->
+      <div class="recipe-page-element">
+        <label for="recipe-photo-input">Photo URL</label>
+        <input type="text" id="recipe-photo-input">
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" id="modal-cancel" class="modal-hide-button action-button">Cancel</button>
+      <button type="button" id="modal-accept" class="action-button">Create Recipe</button>
+    </div>
+
+  </div>
+</div>
