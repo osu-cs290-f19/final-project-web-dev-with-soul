@@ -1,76 +1,76 @@
- /* This is the JavaScript file for the recipe website, its purpose will be to access recipes stores on the site and prehaps add recipes of the user*/
+/* This is the JavaScript file for the recipe website, its purpose will be to access recipes stores on the site and prehaps add recipes of the user*/
 
- /* Hiding and displaying the recipes Start*/
- var recipeArray = document.getElementsByClassName('recipe');
- var recipeNameArray = document.getElementsByClassName('filter-recipe-name');
- for (var i = 0; i < recipeNameArray.length; i++) {
-   recipeNameArray[i].addEventListener('click', toggleVisability);
- }
+/* Hiding and displaying the recipes Start*/
+var recipeArray = document.getElementsByClassName('recipe');
+var recipeNameArray = document.getElementsByClassName('filter-recipe-name');
+for (var i = 0; i < recipeNameArray.length; i++) {
+  recipeNameArray[i].addEventListener('click', toggleVisability);
+}
 
-  function toggleVisability(event){
-    console.log("WE GOT CLICKED");
-    var choosenRecipe = event.currentTarget.dataset.title;
-    choosenRecipe = choosenRecipe;
-    console.log(choosenRecipe);
+function toggleVisability(event){
+  console.log("WE GOT CLICKED");
+  var choosenRecipe = event.currentTarget.dataset.title;
+  choosenRecipe = choosenRecipe;
+  console.log(choosenRecipe);
 
-    for (var i = 0; i < recipeArray.length; i++) {
-      console.log(recipeArray[i].dataset.title);
+  for (var i = 0; i < recipeArray.length; i++) {
+    console.log(recipeArray[i].dataset.title);
 
-      if(recipeArray[i].dataset.title == choosenRecipe){
-        recipeArray[i].classList.add('visable');
-        console.log(recipeArray[i]);
-      }
-      else{
-        recipeArray[i].classList.remove('visable');
-      }
+    if(recipeArray[i].dataset.title == choosenRecipe){
+      recipeArray[i].classList.add('visable');
+      console.log(recipeArray[i]);
+    }
+    else{
+      recipeArray[i].classList.remove('visable');
     }
   }
-  /* End Hiding and displaying the recipes */
+}
+/* End Hiding and displaying the recipes */
 
- /* Filter Box Functionality Start */
- function none(event){
- }
+/* Filter Box Functionality Start */
+function none(event){
+}
 
-   var filterText = document.getElementById('filter-search');
-      filterText.addEventListener('change', none);
+var filterText = document.getElementById('filter-search');
+filterText.addEventListener('change', none);
 
-   var filterCT = document.getElementById('filter-cook-time');
-     filterCT.addEventListener('change', none);
+var filterCT = document.getElementById('filter-cook-time');
+filterCT.addEventListener('change', none);
 
-   var filterRate = document.getElementById('filter-rating');
-     filterRate.addEventListener('change', none);
+var filterRate = document.getElementById('filter-rating');
+filterRate.addEventListener('change', none);
 
-   var mealType = 'all';
+var mealType = 'all';
 
-   var allB = document.getElementById('filter-all-button');
-     allB.addEventListener('click', function (event) {
-        mealType = 'all';
-     });
+var allB = document.getElementById('filter-all-button');
+allB.addEventListener('click', function (event) {
+  mealType = 'all';
+});
 
-   var breakfastB = document.getElementById('filter-breakfast-button');
-     breakfastB.addEventListener('click', function (event) {
-       mealType = 'breakfast';
-    });
+var breakfastB = document.getElementById('filter-breakfast-button');
+breakfastB.addEventListener('click', function (event) {
+  mealType = 'breakfast';
+});
 
-   var lunchB = document.getElementById('filter-lunch-button');
-     lunchB.addEventListener('click', function (event){
-       mealType = 'lunch';
-     });
+var lunchB = document.getElementById('filter-lunch-button');
+lunchB.addEventListener('click', function (event){
+  mealType = 'lunch';
+});
 
-     var dinnerB = document.getElementById('filter-dinner-button');
-       dinnerB.addEventListener('click', function (event){
-         mealType = 'dinner';
-       });
+var dinnerB = document.getElementById('filter-dinner-button');
+dinnerB.addEventListener('click', function (event){
+  mealType = 'dinner';
+});
 
-    var dessertB = document.getElementById('filter-dessert-button');
-      dessertB.addEventListener('click', function (event){
-        mealType = 'dessert';
-      });
+var dessertB = document.getElementById('filter-dessert-button');
+dessertB.addEventListener('click', function (event){
+  mealType = 'dessert';
+});
 
-    var snackB = document.getElementById('filter-snack-button');
-      snackB.addEventListener('click', function (event){
-        mealType = 'snack';
-      });
+var snackB = document.getElementById('filter-snack-button');
+snackB.addEventListener('click', function (event){
+  mealType = 'snack';
+});
 
 function filterByMeal(idx) {
   if(mealType != 'all'){
@@ -82,9 +82,9 @@ function filterByMeal(idx) {
 
 function removeFromList(name){
   for(var i = recipeNameArray.length-1; i >= 0; i--){
-     var filterListName = recipeNameArray[i].dataset.title;
-     name = name.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
-     filterListName = filterListName.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
+    var filterListName = recipeNameArray[i].dataset.title;
+    name = name.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
+    filterListName = filterListName.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
     if(filterListName == name){
       recipeNameArray[i].remove();
     }
@@ -119,157 +119,179 @@ function isRating(value){
   }
   return 0;
 }
- /* Search Button */
-   var search = document.getElementById('filter-search-button');
-   search.addEventListener('click', function (event) {
+/* Search Button */
+var search = document.getElementById('filter-search-button');
+search.addEventListener('click', function (event) {
 
-     if(filterText.value == "" && filterCT.value == "" && filterRate.value == ""){
-     	for(var i = recipeArray.length-1; i >= 0; i--){
-		filterByMeal(i);
-	}
-     }
-     if(filterText.value != ""){
-       for(var i = recipeArray.length -1; i >= 0; i--){
-         var name = recipeArray[i].dataset.title;
+  if(filterText.value == "" && filterCT.value == "" && filterRate.value == ""){
+    for(var i = recipeArray.length-1; i >= 0; i--){
+      filterByMeal(i);
+    }
+  }
+  if(filterText.value != ""){
+    for(var i = recipeArray.length -1; i >= 0; i--){
+      var name = recipeArray[i].dataset.title;
 
-	 name = name.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
+      name = name.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
 
-         filterByMeal(i);
+      filterByMeal(i);
 
-         var userInp = filterText.value;
-         userInp = userInp.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
+      var userInp = filterText.value;
+      userInp = userInp.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
 
-         if(name.includes(userInp) == false){
-           removeFromList(name);
-         }
-       }
-     }
-    if(filterCT.value != ""){
-        for(var i = recipeArray.length-1; i >=0; i--){
-          var cookTime = recipeArray[i].dataset.cooktime;
-          if(isInt(filterCT.value) == 0){
-          }
-          else{
-            if(+cookTime >= +filterCT.value){
-              removeFromList(recipeArray[i].dataset.title);
-            }
-          }
-            filterByMeal(i);
+      if(name.includes(userInp) == false){
+        removeFromList(name);
+      }
+    }
+  }
+  if(filterCT.value != ""){
+    for(var i = recipeArray.length-1; i >=0; i--){
+      var cookTime = recipeArray[i].dataset.cooktime;
+      if(isInt(filterCT.value) == 0){
+      }
+      else{
+        if(+cookTime >= +filterCT.value){
+          removeFromList(recipeArray[i].dataset.title);
         }
       }
-      if(filterRate.value !=""){
-        for(var i = recipeArray.length-1; i >=0; i--){
-          var rateTime = recipeArray[i].dataset.rating;
+      filterByMeal(i);
+    }
+  }
+  if(filterRate.value !=""){
+    for(var i = recipeArray.length-1; i >=0; i--){
+      var rateTime = recipeArray[i].dataset.rating;
 
-          if(isRating(filterRate.value) == 0){
-          }
-          else{
-            if(+rateTime < +filterRate.value){
-              removeFromList(recipeArray[i].dataset.title);
-            }
-          }
-            filterByMeal(i);
+      if(isRating(filterRate.value) == 0){
+      }
+      else{
+        if(+rateTime < +filterRate.value){
+          removeFromList(recipeArray[i].dataset.title);
         }
       }
-   });
+      filterByMeal(i);
+    }
+  }
+});
 
- /* End of Search Button */
+/* End of Search Button */
 
- /* End Filter Box Functionality */
+/* End Filter Box Functionality */
 
 /* Start of Modal */
 
- /* Open Modal */
-  var addButton = document.getElementById('add-recipe-button');
-  addButton.addEventListener('click', function (event){
-    var modal = document.getElementById('create-recipe-modal');
-    modal.classList.remove('hidden');
-    var blurr = document.getElementById('modal-backdrop');
-    blurr.classList.remove('hidden');
+/* Open Modal */
+var addButton = document.getElementById('add-recipe-button');
+addButton.addEventListener('click', function (event){
+  var modal = document.getElementById('create-recipe-modal');
+  modal.classList.remove('hidden');
+  var blurr = document.getElementById('modal-backdrop');
+  blurr.classList.remove('hidden');
+});
+
+/* Closes Modal */
+
+var closeC = document.getElementById('modal-cancel');
+closeC.addEventListener('click', function (event){
+  removeInput();
+  removeModal();
+});
+
+var closeX = document.getElementById('modal-close');
+closeX.addEventListener('click', function (event){
+  removeInput();
+  removeModal();
+});
+
+/* Remove Modal */
+function removeModal(event){
+  var modal = document.getElementById('create-recipe-modal');
+  modal.classList.add('hidden');
+  var blurr = document.getElementById('modal-backdrop');
+  blurr.classList.add('hidden');
+}
+
+/* Removes user input from add */
+function removeInput(event){
+  var recipeInputElements = [
+    document.getElementById('recipe-time-input'),
+    document.getElementById('recipe-rating-input'),
+    document.getElementById('recipe-title-input'),
+    // For the ingredients and instructions
+    document.getElementById('ingredient1'),
+    document.getElementById('ingredient2'),
+    document.getElementById('ingredient3'),
+    document.getElementById('ingredient4'),
+    document.getElementById('ingredient5'),
+    document.getElementById('instruction1'),
+    document.getElementById('instruction2'),
+    document.getElementById('instruction3'),
+    document.getElementById('instruction4'),
+    document.getElementById('instruction5'),
+    document.getElementById('recipe-photo-input'),
+  ];
+
+  recipeInputElements.forEach(function (inputElem) {
+    inputElem.value = '';
   });
+}
 
-   /* Closes Modal */
+// Checks user input into modal before accepting
+function closeAccept() {
+  var time = document.getElementById('recipe-time-input').value.trim();
+  var rating = document.getElementById('recipe-rating-input').value.trim();
+  var title = document.getElementById('recipe-title-input').value.trim();
+  var type = document.querySelector('#reipe-type-fieldset input:checked').value;
+  // var ingredients = document.getElementById()
+  // var instructions = document.getElementById()
+  var imageLink = document.getElementById('recipe-photo-input');
+  //need to include the ingredients and instructions array
+  if (!time || !rating || !title || !type || !imageLink) {
+    alert("You must fill in all of the fields!");
+  } else {
 
-   var closeC = document.getElementById('modal-cancel');
-   closeC.addEventListener('click', function (event){
-     removeInput();
-     removeModal();
-   });
-
-    var closeX = document.getElementById('modal-close');
-    closeX.addEventListener('click', function (event){
-      removeInput();
-      removeModal();
+    recipeArray.push({
+      time: time,
+      rating: rating,
+      title: title,
+      type: type,
+      // ingredients: ingredients,
+      // instructions: instructions,
+      imageLink: imageLink
     });
 
-   /* Remove Modal */
-  function removeModal(event){
-    var modal = document.getElementById('create-recipe-modal');
-    modal.classList.add('hidden');
-    var blurr = document.getElementById('modal-backdrop');
-    blurr.classList.add('hidden');
   }
+}
 
-  /* Removes user input from add */
-  function removeInput(event){
-      var recipeInputElements = [
-        document.getElementById('recipe-time-input'),
-        document.getElementById('recipe-rating-input'),
-        document.getElementById('recipe-title-input'),
-  // For the ingredients and instructions
-         document.getElementById('ingredient1'),
-         document.getElementById('ingredient2'),
-         document.getElementById('ingredient3'),
-         document.getElementById('ingredient4'),
-         document.getElementById('ingredient5'),
-         document.getElementById('instruction1'),
-         document.getElementById('instruction2'),
-         document.getElementById('instruction3'),
-         document.getElementById('instruction4'),
-         document.getElementById('instruction5'),
-         document.getElementById('recipe-photo-input'),
-      ];
+// Checks user input into modal before accepting
+var closeA = document.getElementById('modal-accept');
+closeA.addEventListener('click', function(event) {
 
-      recipeInputElements.forEach(function (inputElem) {
-        inputElem.value = '';
-      });
-
-      var checkedType = document.querySelector('#recipe-type-fieldset input[checked]');
-      checkedType.checked = true;
-
-  }
-
-  // Checks user input into modal before accepting
-  var closeA = document.getElementById('modal-accept');
-  closeA.addEventListener('click', function(event) {
-
-    var time = document.getElementById('recipe-time-input').value.trim();
-    var rating = document.getElementById('recipe-rating-input').value.trim();
-    var title = document.getElementById('recipe-title-input').value.trim();
-    var type = document.querySelector('#recipe-type-fieldset input:checked').value;
-    //need to add all ingredients
-    var ingredient1 = document.getElementById('ingredient1').value.trim();
-    var instruction1 = document.getElementById('instruction1').value.trim();
-    var imageLink = document.getElementById('recipe-photo-input').value.trim();
+  var time = document.getElementById('recipe-time-input').value.trim();
+  var rating = document.getElementById('recipe-rating-input').value.trim();
+  var title = document.getElementById('recipe-title-input').value.trim();
+  var type = document.querySelector('#recipe-type-fieldset input:checked').value;
+  //need to add all ingredients
+  var ingredient1 = document.getElementById('ingredient1').value.trim();
+  var instruction1 = document.getElementById('instruction1').value.trim();
+  var imageLink = document.getElementById('recipe-photo-input').value.trim();
   //need to include the ingredients and instructions array
-    if (!time || !rating || !title || !type || !imageLink || !ingredient1 || !instruction1) {
-      alert("You must fill in all of the fields!");
-    } else {
+  if (!time || !rating || !title || !type || !imageLink || !ingredient1 || !instruction1) {
+    alert("You must fill in all of the fields!");
+  } else {
 
-      recipeArray.push({
-        time: time,
-        rating: rating,
-        title: title,
-        type: type,
-        // ingredients: ingredients,
-        // instructions: instructions,
-        imageLink: imageLink,
-      });
+    recipeArray.push({
+      time: time,
+      rating: rating,
+      title: title,
+      type: type,
+      // ingredients: ingredients,
+      // instructions: instructions,
+      imageLink: imageLink,
+    });
 
-      removeInput();
-      removeModal();
-    }
+    removeInput();
+    removeModal();
+  }
 
-  });
-
+});
 /* End of Modal */
