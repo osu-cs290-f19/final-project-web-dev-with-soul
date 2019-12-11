@@ -27,10 +27,6 @@
   }
   /* End Hiding and displaying the recipes */
 
- /* Creating an array with the recipe data */
-  //var recipeArray = require('./UN_MADE_DATA_FILE');
- /* End Creating an array with recipe data */
-
  /* Filter Box Functionality Start */
  function none(event){
  }
@@ -87,6 +83,7 @@ function filterByMeal(idx) {
 function removeFromList(name){
   for(var i = recipeNameArray.length-1; i >= 0; i--){
      var filterListName = recipeNameArray[i].dataset.title;
+     name = name.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
      filterListName = filterListName.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
     if(filterListName == name){
       recipeNameArray[i].remove();
@@ -125,10 +122,17 @@ function isRating(value){
  /* Search Button */
    var search = document.getElementById('filter-search-button');
    search.addEventListener('click', function (event) {
-
+	
+     if(filterText.value == "" && filterCT.value == "" && filterRate.value == ""){
+     	for(var i = recipeArray.length-1; i >= 0; i--){
+		filterByMeal(i);
+	}
+     } 
      if(filterText.value != ""){
        for(var i = recipeArray.length -1; i >= 0; i--){
          var name = recipeArray[i].dataset.title;
+
+	 name = name.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
 
          filterByMeal(i);
 
@@ -143,7 +147,6 @@ function isRating(value){
     if(filterCT.value != ""){
         for(var i = recipeArray.length-1; i >=0; i--){
           var cookTime = recipeArray[i].dataset.cooktime;
-
           if(isInt(filterCT.value) == 0){
           }
           else{
@@ -161,7 +164,6 @@ function isRating(value){
           if(isRating(filterRate.value) == 0){
           }
           else{
-            console.log("ratetim", rateTime, "filterr", filterRate.value);
             if(+rateTime < +filterRate.value){
               removeFromList(recipeArray[i].dataset.title);
             }
@@ -170,6 +172,7 @@ function isRating(value){
         }
       }
    });
+
  /* End of Search Button */
 
  /* End Filter Box Functionality */
