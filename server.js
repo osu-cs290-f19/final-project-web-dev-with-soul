@@ -25,6 +25,6 @@ app.get('/',function(req,res){
 });
 
 
-app.listen(7321, function(){
+app.listen(3000, function(){
   console.log("=== Server is running on port", port);
 });

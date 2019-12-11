@@ -177,85 +177,90 @@ function isRating(value){
 
  /* End Filter Box Functionality */
 
- // Start of modal
+/* Start of Modal */
 
  /* Open Modal */
-var addButton = document.getElementById('add-recipe-button');
-addButton.addEventListener('click', function (event){
-  var modal = document.getElementById('create-recipe-modal');
-  modal.classList.remove('hidden');
-  var blurr = document.getElementById('modal-backdrop');
-  blurr.classList.remove('hidden');
-});
+  var addButton = document.getElementById('add-recipe-button');
+  addButton.addEventListener('click', function (event){
+    var modal = document.getElementById('create-recipe-modal');
+    modal.classList.remove('hidden');
+    var blurr = document.getElementById('modal-backdrop');
+    blurr.classList.remove('hidden');
+  });
 
-/* Closes Modal */
- var closeX = document.getElementById('modal-close');
- closeX.addEventListener('click', function (event){
-   removeInput();
-   removeModal();
- });
+   /* Closes Modal */
 
- var closeC = document.getElementById('modal-cancel');
- closeC.addEventListener('click', function (event){
-   removeInput()
-   removeModal();
- });
+   var closeC = document.getElementById('modal-cancel');
+   closeC.addEventListener('click', function (event){
+     removeInput();
+     removeModal();
+   });
 
- /* Remove Modal */
-function removeModal(event){
-  var modal = document.getElementById('create-recipe-modal');
-  modal.classList.add('hidden');
-  var blurr = document.getElementById('modal-backdrop');
-  blurr.classList.add('hidden');
-}
-/* Removes user input from add */
-function removeInput(event){
-    var recipeInputElements = [
-      document.getElementById('recipe-time-input'),
-      document.getElementById('recipe-rating-input'),
-      document.getElementById('recipe-title-input'),
-// For the ingredients and instructions
-      // document.getElementById('')
-      // document.getElementById('')
-      document.getElementbyId('recipe-photo-input');
-      document.getElementbyId('recipe-photo-title-input');
-    ];
-
-    postTextInputElements.forEach(function (inputElem) {
-      inputElem.value = '';
+    var closeX = document.getElementById('modal-close');
+    closeX.addEventListener('click', function (event){
+      console.log("Closing modal");
+      removeInput();
+      removeModal();
     });
 
-    var checkedType = document.querySelector('#recipe-type-fieldset input[checked]');
-    checkedType.checked = true;
-
-}
-
-// Checks user input into modal before accepting
-function closeAccept() {
-  var time = document.getElementById('recipe-time-input').value.trim();
-  var rating = document.getElementById('recipe-rating-input').value.trim();
-  var title = document.getElementById('recipe-title-input').value.trim();
-  var type = document.querySelector('#reipe-type-fieldset input:checked').value;
-  // var ingredients = document.getElementById()
-  // var instructions = document.getElementById()
-  var imageLink = document.getElementById('recipe-photo-input');
-//need to include the ingredients and instructions array
-  if (!time || !rating || !title || !type || !imageLink) {
-    alert("You must fill in all of the fields!");
-  } else {
-
-    allPosts.push({
-      time: time,
-      rating: rating,
-      title: title,
-      type: type,
-      ingredients: ingredients,
-      instructions: instructions,
-      imageLink: imageLink,
-    });
-
-    removeInput();
-    removeModal();
+   /* Remove Modal */
+  function removeModal(event){
+    var modal = document.getElementById('create-recipe-modal');
+    modal.classList.add('hidden');
+    var blurr = document.getElementById('modal-backdrop');
+    blurr.classList.add('hidden');
   }
 
-}
+  /* Removes user input from add */
+  function removeInput(event){
+      var recipeInputElements = [
+        document.getElementById('recipe-time-input'),
+        document.getElementById('recipe-rating-input'),
+        document.getElementById('recipe-title-input'),
+  // For the ingredients and instructions
+  //       document.getElementById('')
+  //       document.getElementById('')
+  //For some reason it does NOT like this
+        // document.getElementbyId('recipe-photo-input')
+      ];
+
+      recipeInputElements.forEach(function (inputElem) {
+        inputElem.value = '';
+      });
+
+      var checkedType = document.querySelector('#recipe-type-fieldset input[checked]');
+      checkedType.checked = true;
+
+  }
+
+  // Checks user input into modal before accepting
+  function closeAccept() {
+    var time = document.getElementById('recipe-time-input').value.trim();
+    var rating = document.getElementById('recipe-rating-input').value.trim();
+    var title = document.getElementById('recipe-title-input').value.trim();
+    var type = document.querySelector('#reipe-type-fieldset input:checked').value;
+    // var ingredients = document.getElementById()
+    // var instructions = document.getElementById()
+    var imageLink = document.getElementById('recipe-photo-input');
+  //need to include the ingredients and instructions array
+    if (!time || !rating || !title || !type || !imageLink) {
+      alert("You must fill in all of the fields!");
+    } else {
+
+      recipeArray.push({
+        time: time,
+        rating: rating,
+        title: title,
+        type: type,
+        ingredients: ingredients,
+        instructions: instructions,
+        imageLink: imageLink,
+      });
+
+      removeInput();
+      removeModal();
+    }
+
+  }
+
+/* End of Modal */
