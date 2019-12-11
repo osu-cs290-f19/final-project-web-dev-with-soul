@@ -217,8 +217,8 @@ function removeInput(event){
 // For the ingredients and instructions
       // document.getElementById('')
       // document.getElementById('')
-      document.getElementbyId('recipe-photo-input');
-      document.getElementbyId('recipe-photo-title-input');
+      document.getElementbyId('recipe-photo-input'),
+      document.getElementbyId('recipe-photo-title-input'),
     ];
 
     postTextInputElements.forEach(function (inputElem) {
@@ -251,7 +251,7 @@ function closeAccept() {
       type: type,
       ingredients: ingredients,
       instructions: instructions,
-      imageLink: imageLink,
+      imageLink: imageLink
     });
 
     removeInput();
