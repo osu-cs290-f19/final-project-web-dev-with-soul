@@ -198,7 +198,6 @@ function isRating(value){
 
     var closeX = document.getElementById('modal-close');
     closeX.addEventListener('click', function (event){
-      console.log("Closing modal");
       removeInput();
       removeModal();
     });
@@ -218,10 +217,17 @@ function isRating(value){
         document.getElementById('recipe-rating-input'),
         document.getElementById('recipe-title-input'),
   // For the ingredients and instructions
-  //       document.getElementById('')
-  //       document.getElementById('')
-  //For some reason it does NOT like this
-        // document.getElementbyId('recipe-photo-input')
+         document.getElementById('ingredient1'),
+         document.getElementById('ingredient2'),
+         document.getElementById('ingredient3'),
+         document.getElementById('ingredient4'),
+         document.getElementById('ingredient5'),
+         document.getElementById('instruction1'),
+         document.getElementById('instruction2'),
+         document.getElementById('instruction3'),
+         document.getElementById('instruction4'),
+         document.getElementById('instruction5'),
+         document.getElementById('recipe-photo-input'),
       ];
 
       recipeInputElements.forEach(function (inputElem) {
@@ -234,16 +240,19 @@ function isRating(value){
   }
 
   // Checks user input into modal before accepting
-  function closeAccept() {
+  var closeA = document.getElementById('modal-accept');
+  closeA.addEventListener('click', function(event) {
+
     var time = document.getElementById('recipe-time-input').value.trim();
     var rating = document.getElementById('recipe-rating-input').value.trim();
     var title = document.getElementById('recipe-title-input').value.trim();
-    var type = document.querySelector('#reipe-type-fieldset input:checked').value;
-    // var ingredients = document.getElementById()
-    // var instructions = document.getElementById()
-    var imageLink = document.getElementById('recipe-photo-input');
+    var type = document.querySelector('#recipe-type-fieldset input:checked').value;
+    //need to add all ingredients
+    var ingredient1 = document.getElementById('ingredient1').value.trim();
+    var instruction1 = document.getElementById('instruction1').value.trim();
+    var imageLink = document.getElementById('recipe-photo-input').value.trim();
   //need to include the ingredients and instructions array
-    if (!time || !rating || !title || !type || !imageLink) {
+    if (!time || !rating || !title || !type || !imageLink || !ingredient1 || !instruction1) {
       alert("You must fill in all of the fields!");
     } else {
 
@@ -252,8 +261,8 @@ function isRating(value){
         rating: rating,
         title: title,
         type: type,
-        ingredients: ingredients,
-        instructions: instructions,
+        // ingredients: ingredients,
+        // instructions: instructions,
         imageLink: imageLink,
       });
 
@@ -261,6 +270,6 @@ function isRating(value){
       removeModal();
     }
 
-  }
+  });
 
 /* End of Modal */
