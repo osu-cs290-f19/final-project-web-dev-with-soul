@@ -289,7 +289,36 @@ closeA.addEventListener('click', function(event) {
         imageLink: imageLink
       });
 
-      postRequest.send(reqestBody);
+      postRequest.setRequestHeader('Content-Type', 'application/json');
+      postRequest.addEventListener('load', function(event){
+        if (event.target.status !== 200) {
+          var responseBody = event.target.response;
+        }
+        else{
+          // var recipeTemplate = Handlebars.templates.recipe;
+          var newRecipeHTML = Handlebars.templates.post({
+          // var newRecipeHTML = recipeTemplate({
+            time: time,
+            rating: rating,
+            title: title,
+            type:type,
+            ingredient1: ingredient1,
+            ingredient2: ingredient2,
+            ingredient3: ingredient3,
+            ingredient4: ingredient4,
+            ingredient5: ingredient5,
+            instruction1: instruction1,
+            instruction2: instruction2,
+            instruction3: instruction3,
+            instruction4: instruction4,
+            instruction5: instruction5,
+            imageLink: imageLink
+          });
+          var newRecipeContainer = document.querySelector('recipe');
+          newRecipeContainer.insertAdjacentHTML('beforeend', newRecipeHTML);
+
+        }
+      })
     // var singleRecipe = {
     //   time: time,
     //   rating: rating,
@@ -298,8 +327,9 @@ closeA.addEventListener('click', function(event) {
     //   // ingredients: {ingredient: ingredient1, ingredient: ingredient2, ingredient: ingredient3, ingredient: ingredient4, ingredient: ingredient5},
     //   // instructions: {instruction: instruction1, instruction: instruction2, instruction: instruction3, instruction: instruction4, instruction, instruction5},
     //   imageLink: imageLink
-    };
+    }
     // recipeArray.recipeArray.length.push();
+    postRequest.send(reqestBody);
     console.log("WE ACCTPED");
     removeInput();
     removeModal();
