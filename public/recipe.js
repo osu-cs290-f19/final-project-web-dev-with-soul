@@ -255,9 +255,11 @@ closeA.addEventListener('click', function(event) {
   var instructions = document.getElementById('instructions').value.trim();
   var imageURL = document.getElementById('recipe-photo-input').value.trim();
   //need to include the ingredients and instructions array
+
+
   if (!time || !rating || !title || !type || !imageURL || !ingredients || !instructions) {
     alert("You must fill in all of the fields!");
-  } else {
+  } else {     
 
       var postRequest =  new XMLHttpRequest();
       var requestURL = '/newPost';
@@ -278,15 +280,20 @@ closeA.addEventListener('click', function(event) {
           title: title
         }]
       });
-
       postRequest.setRequestHeader('Content-Type', 'application/json');
       postRequest.addEventListener('load', function(event){
+
+	console.log("status", event.target.status);
+
         if (event.target.status !== 200) {
           var responseBody = event.target.response;
         }
         else{
+		
+	   console.log("made it into a post reqest");
+
           // var recipeTemplate = Handlebars.templates.recipe;
-          var newRecipeHTML = Handlebars.templates.post({
+          var newRecipeHTML = Handlebars.templates.recipe({
           // var newRecipeHTML = recipeTemplate({
             time: time,
             rating: rating,
@@ -303,7 +310,16 @@ closeA.addEventListener('click', function(event) {
           newRecipeContainer.insertAdjacentHTML('beforeend', newRecipeHTML);
 
         }
-      })
+	
+      });
+     
+    postRequest.send(reqestBody);
+    console.log("WE ACCTPED");
+    removeInput();
+    removeModal();
+
+     }
+ });
     // var singleRecipe = {
     //   time: time,
     //   rating: rating,
@@ -312,13 +328,9 @@ closeA.addEventListener('click', function(event) {
     //   // ingredients: {ingredient: ingredient1, ingredient: ingredient2, ingredient: ingredient3, ingredient: ingredient4, ingredient: ingredient5},
     //   // instructions: {instruction: instruction1, instruction: instruction2, instruction: instruction3, instruction: instruction4, instruction, instruction5},
     //   imageLink: imageLink
-    }
+    
     // recipeArray.recipeArray.length.push();
-    postRequest.send(reqestBody);
-    console.log("WE ACCTPED");
-    removeInput();
-    removeModal();
-  });
+
 
 // });
 /* End of Modal */
