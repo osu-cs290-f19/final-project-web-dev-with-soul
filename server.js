@@ -28,9 +28,10 @@ app.get('/',function(req,res){
 
 app.post('/newPost',function(req,res){
 
-  if(req.body && req.body.time && req.body.rating && req.body.title && req.body.type && req.body.ingredients && req.body.instructions && req.body.images){
+  if(req.body){// && req.body.time && req.body.rating && req.body.title && req.body.type && req.body.ingredients && req.body.instructions && req.body.images){
 
-    recipeData.append(req.body);
+    console.log("WE DID IT REDDIT");
+    recipeData.push(req.body);
 
     var newFile = JSON.stringify(recipeData);
 
@@ -38,6 +39,7 @@ app.post('/newPost',function(req,res){
 
       if(!err){
         res.status(200).send();
+        console.log("SEND ITTTTTTTTTT");
       }else{
         res.status(500).send();
       }
@@ -51,6 +53,6 @@ app.post('/newPost',function(req,res){
 
 });
 
-app.listen(port, function(){
+app.listen(7321, function(){
   console.log("=== Server is running on port", port);
 });
