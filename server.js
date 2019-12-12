@@ -28,9 +28,10 @@ app.get('/',function(req,res){
 
 app.post('/newPost',function(req,res){
 
+  console.log("Entered post handler");
   if(req.body){// && req.body.time && req.body.rating && req.body.title && req.body.type && req.body.ingredients && req.body.instructions && req.body.images){
 
-    console.log("WE DID IT REDDIT");
+    console.log("req body found");
     recipeData.push(req.body);
 
     var newFile = JSON.stringify(recipeData);
@@ -39,9 +40,10 @@ app.post('/newPost',function(req,res){
 
       if(!err){
         res.status(200).send();
-        console.log("SEND ITTTTTTTTTT");
+        console.log("Sent Back");
       }else{
         res.status(500).send();
+        console.log("Server error");
       }
 
     });
@@ -49,6 +51,7 @@ app.post('/newPost',function(req,res){
   }else{
 
     res.status(400).send();
+    console.log("Server error 400");
   }
 
 });

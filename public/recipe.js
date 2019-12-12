@@ -231,17 +231,9 @@ function removeInput(event){
     document.getElementById('recipe-rating-input'),
     document.getElementById('recipe-title-input'),
     // For the ingredients and instructions
-    document.getElementById('ingredient1'),
-    document.getElementById('ingredient2'),
-    document.getElementById('ingredient3'),
-    document.getElementById('ingredient4'),
-    document.getElementById('ingredient5'),
-    document.getElementById('instruction1'),
-    document.getElementById('instruction2'),
-    document.getElementById('instruction3'),
-    document.getElementById('instruction4'),
-    document.getElementById('instruction5'),
-    document.getElementById('recipe-photo-input'),
+    document.getElementById('ingredients'),
+    document.getElementById('instructions'),
+    document.getElementById('recipe-photo-input')
   ];
 
   recipeInputElements.forEach(function (inputElem) {
@@ -259,11 +251,11 @@ closeA.addEventListener('click', function(event) {
   var title = document.getElementById('recipe-title-input').value.trim();
   var type = document.querySelector('#recipe-type-fieldset input:checked').value;
   //need to add all ingredients
-  var ingredient1 = document.getElementById('ingredient1').value.trim();
-  var instruction1 = document.getElementById('instruction1').value.trim();
-  var imageLink = document.getElementById('recipe-photo-input').value.trim();
+  var ingredients = document.getElementById('ingredients').value.trim();
+  var instructions = document.getElementById('instructions').value.trim();
+  var imageURL = document.getElementById('recipe-photo-input').value.trim();
   //need to include the ingredients and instructions array
-  if (!time || !rating || !title || !type || !imageLink || !ingredient1 || !instruction1) {
+  if (!time || !rating || !title || !type || !imageURL || !ingredients || !instructions) {
     alert("You must fill in all of the fields!");
   } else {
 
@@ -271,22 +263,20 @@ closeA.addEventListener('click', function(event) {
       var requestURL = '/newPost';
       postRequest.open('POST', requestURL);
 
+      var processedIngredients = ingredients.split(',');
+      var processedInstructions = ingredients.split(',');
+
       var reqestBody = JSON.stringify({
         time: time,
         rating: rating,
         title: title,
         type:type,
-        ingredient1: ingredient1,
-        ingredient2: ingredient2,
-        ingredient3: ingredient3,
-        ingredient4: ingredient4,
-        ingredient5: ingredient5,
-        instruction1: instruction1,
-        instruction2: instruction2,
-        instruction3: instruction3,
-        instruction4: instruction4,
-        instruction5: instruction5,
-        imageLink: imageLink
+        ingredients: processedIngredients,
+        instructions: processedInstructions,
+        images: [{
+          imageLink: imageURL,
+          title: title
+        }]
       });
 
       postRequest.setRequestHeader('Content-Type', 'application/json');
@@ -302,17 +292,12 @@ closeA.addEventListener('click', function(event) {
             rating: rating,
             title: title,
             type:type,
-            ingredient1: ingredient1,
-            ingredient2: ingredient2,
-            ingredient3: ingredient3,
-            ingredient4: ingredient4,
-            ingredient5: ingredient5,
-            instruction1: instruction1,
-            instruction2: instruction2,
-            instruction3: instruction3,
-            instruction4: instruction4,
-            instruction5: instruction5,
-            imageLink: imageLink
+            ingredients: processedIngredients,
+            instructions: processedInstructions,
+            images: [{
+              imageLink: imageURL,
+              title: title
+            }]
           });
           var newRecipeContainer = document.querySelector('recipe');
           newRecipeContainer.insertAdjacentHTML('beforeend', newRecipeHTML);
