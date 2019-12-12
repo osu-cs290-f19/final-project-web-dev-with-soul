@@ -266,7 +266,7 @@ closeA.addEventListener('click', function(event) {
       postRequest.open('POST', requestURL);
 
       var processedIngredients = ingredients.split(',');
-      var processedInstructions = ingredients.split(',');
+      var processedInstructions = instructions.split(',');
 
       for(i = 0;i < processedIngredients.length;i++){
         processedIngredients[i] = {
