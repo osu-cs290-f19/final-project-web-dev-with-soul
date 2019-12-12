@@ -7,6 +7,20 @@ for (var i = 0; i < recipeNameArray.length; i++) {
   recipeNameArray[i].addEventListener('click', toggleVisability);
 }
 
+// function insertNewRecipe(time, rating, title, type, ingredients, instructions, imageLink) {
+//
+//   var postDataHTML = Handlebars.templates.post({
+//     time: time,
+//     rating: rating,
+//     title: title,
+//     type: type,
+//     // ingredients: {ingredient: ingredient1, ingredient: ingredient2, ingredient: ingredient3, ingredient: ingredient4, ingredient: ingredient5},
+//     // instructions: {instruction: instruction1, instruction: instruction2, instruction: instruction3, instruction: instruction4, instruction, instruction5},
+//     imageLink: imageLink,
+//   });
+//   return postDataHTML;
+// }
+
 function toggleVisability(event){
   console.log("WE GOT CLICKED");
   var choosenRecipe = event.currentTarget.dataset.title;
@@ -235,32 +249,6 @@ function removeInput(event){
   });
 }
 
-// Checks user input into modal before accepting
-function closeAccept() {
-  var time = document.getElementById('recipe-time-input').value.trim();
-  var rating = document.getElementById('recipe-rating-input').value.trim();
-  var title = document.getElementById('recipe-title-input').value.trim();
-  var type = document.querySelector('#reipe-type-fieldset input:checked').value;
-  // var ingredients = document.getElementById()
-  // var instructions = document.getElementById()
-  var imageLink = document.getElementById('recipe-photo-input');
-  //need to include the ingredients and instructions array
-  if (!time || !rating || !title || !type || !imageLink) {
-    alert("You must fill in all of the fields!");
-  } else {
-
-    recipeArray.push({
-      time: time,
-      rating: rating,
-      title: title,
-      type: type,
-      // ingredients: ingredients,
-      // instructions: instructions,
-      imageLink: imageLink
-    });
-
-  }
-}
 
 // Checks user input into modal before accepting
 var closeA = document.getElementById('modal-accept');
@@ -279,15 +267,16 @@ closeA.addEventListener('click', function(event) {
     alert("You must fill in all of the fields!");
   } else {
 
-    recipeArray.push({
+    var singleRecipe = {
       time: time,
       rating: rating,
       title: title,
       type: type,
-      // ingredients: ingredients,
-      // instructions: instructions,
-      imageLink: imageLink,
-    });
+      // ingredients: {ingredient: ingredient1, ingredient: ingredient2, ingredient: ingredient3, ingredient: ingredient4, ingredient: ingredient5},
+      // instructions: {instruction: instruction1, instruction: instruction2, instruction: instruction3, instruction: instruction4, instruction, instruction5},
+      imageLink: imageLink
+    };
+    recipeArray.recipeArray.length.push();
 
     removeInput();
     removeModal();
