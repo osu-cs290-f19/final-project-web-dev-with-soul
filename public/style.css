@@ -189,8 +189,17 @@ ol{
 
 /* This is css for the modal/button */
 
+.modal-header h3 {
+  background-color: #D08F24;
+  margin: 0px;
+  padding: 10px;
+  font-size: 30px;
+  color: white;
+  text-align: center; 
+}
+
 #add-recipe-button {
-  background-color: #ED7733;
+  background-color: #D08F24;
   border: 0px solid rgba(0,0,0,0.10);
   position: fixed;
   color: black;
@@ -249,7 +258,7 @@ ol{
   min-height: 300px;
   margin: 40px auto;
   background-color: #fff;
-  border-radius: 15px;
+  //border-radius: 15px;
 }
 
 .modal-header {
@@ -264,8 +273,12 @@ ol{
   font-size: 24px;
   border: none;
   background: none;
-  padding: 0;
+  padding: 2px;
   cursor: pointer;
+}
+#modal-close:hover {
+  background: #C15236;
+  color: white;
 }
 
 .modal-body {
@@ -286,7 +299,7 @@ ol{
 
 .recipe-page-element input {
   flex: 6 200px;
-  padding: 8px;
+  margin: 8px;
   font-size: 20px;
   border: 1px solid #aaa;
 }
@@ -308,10 +321,12 @@ ol{
 }
 
 #modal-cancel {
-  color: #333;
-  background-color: #fff;
+  color: #C15236;
+  background-color: white;
+  border: 2px solid #C15236;
 }
 
 #modal-cancel:hover {
-  background-color: #eee;
+  background-color: #C15236;
+  color: white;
 }
